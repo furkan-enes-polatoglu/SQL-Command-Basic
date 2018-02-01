@@ -1,0 +1,18 @@
+drop table // tablo siler
+create table // tablo oluşturur
+create wiev // sanal olarak tablo oluşturma
+group by // bölüme göre gruplandırma 
+
+select * from personel where ad in (select ad from personel where il="Kütahya");
+//aynı isimde ve aynı ilde olanları şehirleri,adları ile göster
+
+select * from personel where maas > (Select avg(maas) from personel where bolum="01");
+//bilgisayar bölümündeki personelin ortalama maaşından daha yüksek maaş alanları listele
+
+intersect // iki tablonun kesişimini ifade eder
+commit // veritabanını sabitlemek için, geridönüşüm noktası oluşturmak gibi birşey
+rollback // commit'lediğimiz yere kadar geri döndürür
+round // yuvarlamak demektir 4.03 > 4'e yuvarlar
+
+
+

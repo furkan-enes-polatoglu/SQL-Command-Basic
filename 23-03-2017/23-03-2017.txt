@@ -1,0 +1,33 @@
+Select * from personel where ad like "A*" order by soyad ;
+// personel tablosunda adý a ile baþlayan ve soyadlarý a-z sýralayacak.
+
+Select distinct (ad) from personel
+// ad bölümünde tekrarlanan verilerin sadece bir tanesini getirir.
+
+update personel set cinsiyet="BAYAN" where ad="Serkan";
+// ad bölümünde Serkan adlý kiþinin cinsiyetini bayan olarak deðiþtir.
+
+alter table personel add ders_saati varchar(10);
+// personel toablosuna ders_saati adlý, veri tipi varchar olarak alan ekler.
+
+select ad,soyad,ders_saati,maas+ders_saati*10 AS ToplamMaas from personel;
+// personel tablosunda aldýðý maaþa ve ders saatine bakarak aldýðý toplam maaþý gösteren sorgu. 
+   (1 saat = 1 maaþ)
+   (maas + ders saati * 10)
+
+select * from  personel where il in ("kütahya","bursa")
+// personel tablosunda ili kütahya ve bursa olanlarý gösterir. Arama operatörüdür
+
+ÖNEMLÝ
+-------
+select * from personel where il in (Select il from personel where ad="Serkan" and soyad="Akan");
+// serkan ile ayný ilde oturanlarýn listesini getirir. 2 tane serkan olursa yinede gösterir.
+
+select * from personel where maas < (select maas from personel where ad=serkan" and soyad="akan");
+//personel tablosunda serkan akan'ýn maaþýndan düþük maaþlýlarý listeler.
+
+select * from personel where maas < any (select max(maas) from personel);
+//personel tablosunda en yüksek maaaþ alandan, daha düþük maaþ alanlarý listeler.
+
+select * from personel where maas > any (select min(maas) from personel);
+//en düþük maaþ alan personelden daha yüksek maaþ alan personeli göster.

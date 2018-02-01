@@ -1,0 +1,74 @@
+Select * from personel where ad = "serkan" //PERSONEL TABLOSUNDA ADI serkan OLANLARI GÖSTER
+
+select * from personel where ad like "s*";  //PERSONEL TABLOSUNDA ADI s ÝLE BAÞLAYAN VERÝLERÝ GÖSTER
+
+? (tek bir karaketer yerine geçer)
+
+select * from personel where ad ad like "a??"; (ADI a ÝLE BAÞLAYAN VE 3 KARAKTERLÝ ÝSÝMLERÝ GÖSTER)
+
+select * from personel order by ad asc; //AD BÖLÜMÜNÜ A'dan Z'ye sýralar.
+
+select * from personel order by ad dsc; //AD BÖLÜMÜNÜ A'dan Z'ye sýralar.
+
+select * from personel order by ad //"Order By" AD BÖLÜMÜNÜ A'dan Z'ye sýralar, "DEFAULT" OLARAK
+
+SELECT ad+ " " +soyad as adý_soyadý from personel order by ad  asc; // Adý ve soyadý sütunlarýný birleþtir
+ve a'dan z'ye sýrala. 
+
+SELECT ad+" "+soyad as isim, maas*1.18 as zamlimaas 
+from personel order by ad asc; 
+// adý ve soyadýný birleþtir. Maaþlarý %18 arttýrarak göster ve verileri
+a'dan z'ye sýrala.
+
+DELETE * from personel; // personel tablosundaki kayýtlarý koþulsuz olarak hepsini siler.
+
+delete * from personel where ad="serkan"; // personel tablosundan adý serkan olaný sil.
+
+update personel set maas=maas*10.1 where ad="serkan"; // personel tablosunda adý serkan olanýn maaþýna
+%10 zam yap
+
+update personel set maas=22000 where il="kütahya"; // ili kütahya olanýn maaþýný 22000 yap.
+
+select * from personel where dogtar between #01/01/1977# and #31/12/1977#;
+// doðum tarihi #01/01/1977# ve #31/12/1977# arasýnda olan yani 39 yaþýnda olaný göster.
+// between (arasýnda)
+
+update personel set maas=10000 where dogtar between #01/01/1977# and #31/12/1977#;
+//doðum tarihi #01/01/1977# ve #31/12/1977# arasýnda olan yani 39 yaþýnda olanýn maaþýný 10.000 yap.
+
+select ad+ " "+soyad as AdSoyad, maas, maas*1.15 as ZamliMaas from personel;
+
+//Tabloda adý,soyadýný gösterip, mevcut maaþý yanýna ekledikten sonra zam yapýlan maaþý da yanýnda
+göster.
+
+select conunt(*) as personel_sayisi from personel; //personel tablosunda kaç tane veri olduðunu gösterir.
+
+select avg(maas) as ortalama_maas from personel; //tablodaki ortalama maaþý gösterir.
+						 //AVG komutu (ortalama)
+select max(maas) as enyuksek_mas from personel; //tablodaki en yüksek maaþý gösterir.
+
+select min(maas) as enyuksek_maas from personel; //tablodaki en düþük maaþý gösterir.
+
+select sum(maas) as toplam_maas from personel; //tablodaki tüm maaþlarýn toplamýný gösterir.
+
+select AVG(maas) as OrtMaas from personel where cinsiyet="BAY";
+//Tabloda bay olanlarýn maaþlarýnýn ortalamalarýný göster.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

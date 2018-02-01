@@ -1,0 +1,6 @@
+*Select bolum, avg(maas) from personel group by bolum;
+// hepsini ayrý ayrý guruplayýp bölümün ismini gösterir.
+// bölümlerin ortalama maaþýný listeleyiniz?
+
+*
+// bölümlerin ortalama maaþlarýndan daha düþük maaþ alan personelleri listeleyiniz

@@ -1,0 +1,13 @@
+select * from personel where ad="furkan" and maas>(select avg(maas) from personel where ad="serkan");
+//ismi serkan olan personelin ortalama maaþýndan daha büyük ve ismi furkan olan personeli göster.
+
+Update personel set maas=maas*10 where bolum in
+SELECT bolum from personel where ad="serkan" and maas < select avg(maas) from personel where ad="serkan"));
+
+//üstteki sorgudaki çýktýda maaþlara %10 zam yap
+
+Select * from personel where bolum in
+(Select bolum from personel where ad="serkan" and maas < (select avg(maas) from personel where ad="furkan"));
+
+
+

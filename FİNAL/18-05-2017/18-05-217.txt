@@ -1,0 +1,15 @@
+Select top 2 * from personel // personel tablosundaki ilk 2 veri
+
+select top 25 Percent * from personel // personel tablosundaki verilerin %25'i
+
+in komutu
+
+intersect komutu // 2 tablonun kesiþimini gösterir
+
+Select * from Musteriler JOIN Satislar ON Musteriler.id_Satislar.id // tablo birleþtirme
+
+boolean veri tipi // true veya false
+
+not null /// boþ geçilemez
+
+

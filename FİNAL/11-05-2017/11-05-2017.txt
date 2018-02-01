@@ -1,0 +1,23 @@
+SQL Having kullanýmý 
+Having yapýsý temelde WHERE ile ayný görevi yapmaktadýr. GROUP BY ile kullanýldýktan sonra ortaya çýkan
+verileri filtrelemek için kullanýlýr. Ayrýca Where ifadesinden sonra...
+
+HAVING kullaným biçimi
+SELECT alan_adlari,
+FROM tablo
+GROUP BY alan_adi
+HAVING alanadi operator deger
+
+Burada operatör ile berlirtilen yere =,<,>,% gibi operatörler kullanýlýr.
+
+*SELECT il, SUM(maas) AS Toplam_Maas FROM personel 
+ WHERE Maas>2000
+ GROUP BY il
+ HAVING il LIKE 'k*'
+
+//Personel toplosunda K ile baþlayan þehirleri maaþlarý 2000'den fazla
+ olanlarý toplayarak göster. K ile baþlayan 2 þehir varsa þehirleri gruplandýrarak göster.
+
+//www.sqlsorgulari sitesinden çalýþ
+
+

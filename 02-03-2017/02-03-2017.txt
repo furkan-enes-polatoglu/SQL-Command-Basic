@@ -1,0 +1,15 @@
+### MÝCROSOFT ACCSESS ###
+
+SELECT * FROM TabloAdi // tablodaki tüm verileri gösterir
+AS komutu // tablo baþlýðýný deðiþtirir.
+ORDER BY // sýralama
+ASC // artan sýra  azdan çoka doðru.
+DESC // çoktan aza doðru.
+WHERE
+LIKE "d*" d ile baþlayanlarý göster.
+LIKE "ç??"; // bir karakter boþluk býrakýr  (?)
+OR (veya) *** Select * from Urunler urunAdi Where="gofret" or urunAdi="çikolata" (DOÐRU)
+          *** Select * from Urunler urunAdi Where="gofret and Where="çikolata" (YANLIÞ)
+
+Select cinsi+ " " +urunAdi as ürünler from urunler; // birleþtirme		
+

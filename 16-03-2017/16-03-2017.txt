@@ -1,0 +1,60 @@
+select AVG(maas) as OrtMaas from personel where il="Kütahya";
+// Ýli Lütahya olanlarýn ortalama maaþýný gösterir.
+
+CREATE TABLE bolum
+(bolumno varchar(4), bolumadi varchar(15));
+// Tablo oluþturup içine bölüm no ve bölüm adý satýrlarýný ekler.
+
+insert into bolum (bolumno,bolumadi) values ("01","Bilgisayar");
+// "bolum" tablosuna satýr ekler.
+
+insert into personel (ogrno,ad,soyad,dogtar,maas,cinsiyet,il) values ("201651504578","Serkan","Akan","15/07/1979","5000","Erkek","Kütahya");
+// personel tablosuna veri ekler.
+
+select * from personel where soyad is null;
+// Soyadý boþ(null) olaný gösterir.
+
+select * from personel where soyad=" " is null;
+// Soyadýnda boþluk karakteri olaný göster.
+
+select * from personel where soyad is not null;
+// Soyadý boþ olmayan kayýtlarý gösterir.
+
+alter table personel add bolum varchar(4);
+// personel tablosuna alan(sütun) ekler.
+
+alter table personel add column bolum varchar(4);
+// Üsttekinin aynýsýdýr. Personel tablosuna alan(sütun) ekler.
+
+select * from personel inner join bolum on personel.bolum=bolum.bolumno;
+// personel ve bolum tablosunu birleþtir. Personel tablosundaki bolumü,
+bolum tablosundaki bolum_no ile birleþtir.
+
+select * from personel inner join
+bolum on personel.bolum=bolum.bolumno where bolum.bolumadi="Bilgisayar";
+//bölüm adý bilgisayar olanlarý birleþtirilmiþ tabloda gösterir.
+
+update personel inner join
+bolum on personel.bolum=bolum.bolumno set maas=maas*1.10 where bolumadi="Bilgisayar";
+//Bilgisayar bölümü olanlarýn maaþýna %10 zam yap.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
